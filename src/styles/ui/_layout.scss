@@ -1,0 +1,9 @@
+@import '~sass-bem-mixins/index';
+@import '../variables';
+
+@include block('container') {
+  max-width: $containerMaxWidth;
+  margin-left: auto;
+  margin-right: auto;
+  padding: $contentPaddingY $contentPaddingX;
+}

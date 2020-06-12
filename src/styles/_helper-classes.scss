@@ -1,0 +1,46 @@
+@import '~sass-bem-mixins/index';
+@import 'variables';
+
+.text- {
+  &color- {
+    &basic {
+      &, & a {
+        color: $textColorBasic;
+      }
+    }
+    &muted {
+      color: $textColorMuted;
+    }
+  }
+  &size- {
+    &diminished {
+      font-size: $textSizeDiminished;
+    }
+  }
+  &no-wrap {
+    white-space: nowrap;
+  }
+}
+
+.cursor- {
+  &not-allowed {
+    cursor: not-allowed;
+  }
+  &pointer {
+    cursor: pointer;
+  }
+}
+
+@include block('elements-with-spacing') {
+  display: flex;
+  @include element('element') {
+    margin-left: $contentPaddingX;
+    margin-right: $contentPaddingX;
+    &:first-of-type {
+      margin-left: 0;
+    }
+    &:last-of-type {
+      margin-right: 0;
+    }
+  }
+}

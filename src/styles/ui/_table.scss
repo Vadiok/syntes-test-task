@@ -1,0 +1,60 @@
+@import '~sass-bem-mixins/index';
+@import '../variables';
+
+@include block('table') {
+  overflow-x: auto;
+  @include element('inner') {
+    text-align: left;
+    min-width: 100%;
+    border-collapse: collapse;
+  }
+  @include element('row') {
+    border-bottom: 2px solid $borderLight;
+    background-color: transparent;
+    transition-duration: $transitionDurationColor;
+    transition-property: background-color;
+    &:hover {
+      background-color: $backgroundLight;
+    }
+    @include modifier('in-header') {
+      &, & th {
+        font-weight: bold;
+      }
+      &:hover {
+        background-color: transparent;
+      }
+    }
+  }
+  @include element('data') {
+    padding: $contentPaddingY $contentPaddingX;
+    @include modifier('clickable') {
+      cursor: pointer;
+      &:hover {
+        color: $textColorAccent;
+        transition-duration: $transitionDurationColor;
+        transition-property: color;
+      }
+    }
+    @include modifier('selected') {
+      color: $textColorAccent;
+    }
+  }
+  @include element('arrow-icon-container') {
+    display: inline-block;
+    width: 24px;
+    margin-left: $contentPaddingX / 2;
+  }
+}
+
+@include block('table-summary') {
+  display: flex;
+  justify-content: flex-end;
+  font-size: $textSizeDiminished;
+  flex-wrap: wrap;
+  padding-top: $contentPaddingY;
+  @include element('item') {
+    padding-bottom: $contentPaddingY;
+    margin-right: $contentPaddingX;
+    margin-left: $contentPaddingX;
+  }
+}

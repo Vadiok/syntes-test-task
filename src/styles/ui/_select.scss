@@ -1,0 +1,24 @@
+@import '~sass-bem-mixins/index';
+@import '../variables';
+
+@include block('select') {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid;
+  appearance: none;
+  padding-bottom: $textSizeDiminished / 2;
+  display: inline-flex;
+  select {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    border: none;
+    background: none;
+    padding-right: 20px;
+    margin-right: -20px;
+  }
+  @include element('dropdown') {
+    display: inline-block;
+    margin-top: -3px;
+    pointer-events: none;
+  }
+}
