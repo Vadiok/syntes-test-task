@@ -1,5 +1,9 @@
 # Syntes Test Task
 
+## Online Demo
+
+Visit [syntes-test-task.netlify.app](https://syntes-test-task.netlify.app/)
+
 ## Project setup
 ```
 yarn install
